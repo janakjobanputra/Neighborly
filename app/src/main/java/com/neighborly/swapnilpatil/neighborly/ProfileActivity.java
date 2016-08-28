@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class ProfileActivity extends Activity {
 
-    private List<String> categoryNames = new ArrayList<String>();
+    private List<String> profileNames = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_my);
-        setContentView(R.layout.activity_cards);
+        setContentView(R.layout.activity_profile);
         //addingLists();
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        CategoryAdapter ca = new CategoryAdapter(createList(30));
+        ProfileAdapter ca = new ProfileAdapter(createList(7));
         recList.setAdapter(ca);
 
     }
@@ -51,18 +51,19 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<Categories> createList(int size) {
-        categoryNames.add("Plumbing");
-        categoryNames.add("Car");
-        categoryNames.add("Medical");
-        categoryNames.add("Safety");
-        categoryNames.add("Electronics");
-        categoryNames.add("Food/Groceries");
-        categoryNames.add("Advice");
-        List<Categories> result = new ArrayList<Categories>();
-        for (int i=0; i < categoryNames.size(); i++) {
-            Categories ci = new Categories();
-            ci.name = categoryNames.get(i);
+    private List<Profiles> createList(int size) {
+        /*profileNames.add("Plumbing");
+        profileNames.add("Car");
+        profileNames.add("Medical");
+        profileNames.add("Safety");
+        profileNames.add("Electronics");
+        profileNames.add("Food/Groceries");
+        profileNames.add("Advice");*/
+        List<Profiles> result = new ArrayList<Profiles>();
+        for (int i=0; i < size; i++) {
+            Profiles ci = new Profiles();
+            //ci.name = profileNames.get(i);
+            ci.name = "default";
             result.add(ci);
         }
         return result;
