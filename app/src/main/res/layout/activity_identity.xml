@@ -99,24 +99,38 @@
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="New Button"
+                    android:layout_height="50dp"
+                    android:text="Request A Service"
                     android:id="@+id/button"
                     android:layout_margin="5dp"
                     android:background="#f44336" />
 
-                <Button
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="New Button"
-                    android:id="@+id/button2"
-                    android:layout_margin="5dp"
-                    android:background="#f44336" />
+                    android:layout_height="55dp">
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:text="Notifications"
+                        android:id="@+id/textview8"
+                        android:layout_margin="5dp"
+                        android:background="#f44336" />
+
+                    <Switch
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch1"
+                        android:layout_gravity="right"
+                        android:background="#263238" />
+
+                </LinearLayout>
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="New Button"
+                    android:layout_height="50dp"
+                    android:text="Offer a Service"
                     android:id="@+id/button3"
                     android:layout_margin="5dp"
                     android:background="#F44336" />
@@ -124,6 +138,12 @@
 
 
         </LinearLayout>
+        <!--
+        <shape android:shape="rectangle">
+    <corners android:radius="3dp" />
+    <stroke android:width="5px" android:color="#1a1a1a" />
+</shape>
+    -->
 
     </RelativeLayout>
 
