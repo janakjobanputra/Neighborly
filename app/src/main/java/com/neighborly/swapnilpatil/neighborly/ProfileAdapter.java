@@ -13,24 +13,24 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder> {
 
-    private List<Categories> categoryList;
+    private List<Profiles> profileList;
 
-    public CategoryAdapter(List<Categories> categoryList) {
-        this.categoryList = categoryList;
+    public ProfileAdapter(List<Profiles> profileList) {
+        this.profileList = profileList;
     }
 
 
     @Override
     public int getItemCount() {
-        return categoryList.size();
+        return profileList.size();
     }
 
     @Override
-    public void onBindViewHolder(CategoryViewHolder categoryViewHolder, int i) {
-        Categories ci = categoryList.get(i);
-        categoryViewHolder.vName.setText(ci.name);
+    public void onBindViewHolder(ProfileViewHolder profileViewHolder, int i) {
+        Profiles ci = profileList.get(i);
+        profileViewHolder.vName.setText(ci.name);
 
         //categoryViewHolder.vSurname.setText(ci.surname);
         //categoryViewHolder.vEmail.setText(ci.email);
@@ -38,15 +38,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
 
     @Override
-    public CategoryViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ProfileViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
-                inflate(R.layout.cards, viewGroup, false);
+                inflate(R.layout.profile_cards, viewGroup, false);
 
-        return new CategoryViewHolder(itemView);
+        return new ProfileViewHolder(itemView);
     }
 
-    public static class CategoryViewHolder extends RecyclerView.ViewHolder {
+    public static class ProfileViewHolder extends RecyclerView.ViewHolder {
 
         protected TextView vName;
         protected RelativeLayout relativeLayout;
@@ -55,7 +55,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         //protected TextView vEmail;
         //protected TextView vTitle;
 
-        public CategoryViewHolder(View v) {
+        public ProfileViewHolder(View v) {
             super(v);
             vName =  (TextView) v.findViewById(R.id.txtName);
             cardView = (CardView) v.findViewById(R.id.card_view);
@@ -64,8 +64,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                 @Override
                 public void onClick(View v)
                 {
-                    Intent intent = new Intent(v.getContext(),UserActivity.class);
-                    v.getContext().startActivity(intent);
+                    //Intent intent = new Intent(v.getContext(),UserActivity.class);
+                    //v.getContext().startActivity(intent);
+                    Log.v("ProfileAdapter", "Success");
                 }
             });
             //vSurname = (TextView)  v.findViewById(R.id.txtSurname);

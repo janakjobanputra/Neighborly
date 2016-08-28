@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class UserActivity extends Activity {
 
-    private List<String> categoryNames = new ArrayList<String>();
+    private List<String> userNames = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_my);
-        setContentView(R.layout.activity_cards);
+        setContentView(R.layout.activity_user_cards);
         //addingLists();
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        CategoryAdapter ca = new CategoryAdapter(createList(30));
+        UserAdapter ca = new UserAdapter(createList(30));
         recList.setAdapter(ca);
 
     }
@@ -51,20 +51,26 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<Categories> createList(int size) {
-        categoryNames.add("Plumbing");
-        categoryNames.add("Car");
-        categoryNames.add("Medical");
-        categoryNames.add("Safety");
-        categoryNames.add("Electronics");
-        categoryNames.add("Food/Groceries");
-        categoryNames.add("Advice");
-        List<Categories> result = new ArrayList<Categories>();
-        for (int i=0; i < categoryNames.size(); i++) {
-            Categories ci = new Categories();
-            ci.name = categoryNames.get(i);
-            result.add(ci);
+    private List<Users> createList(int size) {
+        /*userNames.add("Plumbing");
+        userNames.add("Car");
+        userNames.add("Medical");
+        userNames.add("Safety");
+        userNames.add("Electronics");
+        userNames.add("Food/Groceries");
+        userNames.add("Advice");*/
+        for(int i = 0; i<7;i++)
+        {
+            userNames.add("User"+(i+1));
         }
+        List<Users> result = new ArrayList<Users>();
+        for (int i=0; i < userNames.size(); i++) {
+            Users ci = new Users();
+            ci.name = userNames.get(i);
+            result.add(ci);
+
+        }
+
         return result;
     }
 }

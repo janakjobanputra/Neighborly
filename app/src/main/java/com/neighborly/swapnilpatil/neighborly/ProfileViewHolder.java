@@ -12,7 +12,7 @@ import com.neighborly.swapnilpatil.neighborly.R;
 /**
  * Created by swapnilpatil on 8/27/16.
  */
-public class CategoryViewHolder extends RecyclerView.ViewHolder{
+public class ProfileViewHolder extends RecyclerView.ViewHolder{
     protected TextView vName;
     protected TextView vSurname;
     protected TextView vEmail;
@@ -20,7 +20,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder{
     //protected CardView cardView;
     protected RelativeLayout relativeLayout;
 
-    public CategoryViewHolder(View v) {
+    public ProfileViewHolder(View v) {
         super(v);
         vName =  (TextView) v.findViewById(R.id.txtName);
         /*v.setOnClickListener(new View.OnClickListener(){
@@ -35,3 +35,4 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder{
         //vTitle = (TextView) v.findViewById(R.id.title);
     }
 }
+
