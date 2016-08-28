@@ -57,8 +57,8 @@ public class MainActivity extends Activity {
         for (int i=1; i <= size; i++) {
             Categories ci = new Categories();
             ci.name = Categories.NAME_PREFIX + i;
-            ci.surname = Categories.SURNAME_PREFIX + i;
-            ci.email = Categories.EMAIL_PREFIX + i + "@test.com";
+            //ci.surname = Categories.SURNAME_PREFIX + i;
+            //ci.email = Categories.EMAIL_PREFIX + i + "@test.com";
 
             result.add(ci);
 

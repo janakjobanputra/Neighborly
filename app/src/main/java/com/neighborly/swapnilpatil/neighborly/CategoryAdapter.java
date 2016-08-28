@@ -26,9 +26,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(CategoryViewHolder categoryViewHolder, int i) {
         Categories ci = categoryList.get(i);
         categoryViewHolder.vName.setText(ci.name);
-        categoryViewHolder.vSurname.setText(ci.surname);
-        categoryViewHolder.vEmail.setText(ci.email);
-        categoryViewHolder.vTitle.setText(ci.name + " " + ci.surname);
+        //categoryViewHolder.vSurname.setText(ci.surname);
+        //categoryViewHolder.vEmail.setText(ci.email);
+        //categoryViewHolder.vTitle.setText(ci.name + " " + ci.surname);
     }
 
     @Override
@@ -43,16 +43,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
 
         protected TextView vName;
-        protected TextView vSurname;
-        protected TextView vEmail;
-        protected TextView vTitle;
+        //protected TextView vSurname;
+        //protected TextView vEmail;
+        //protected TextView vTitle;
 
         public CategoryViewHolder(View v) {
             super(v);
             vName =  (TextView) v.findViewById(R.id.txtName);
-            vSurname = (TextView)  v.findViewById(R.id.txtSurname);
-            vEmail = (TextView)  v.findViewById(R.id.txtEmail);
-            vTitle = (TextView) v.findViewById(R.id.title);
+            //vSurname = (TextView)  v.findViewById(R.id.txtSurname);
+            //vEmail = (TextView)  v.findViewById(R.id.txtEmail);
+            //vTitle = (TextView) v.findViewById(R.id.title);
         }
     }
 }

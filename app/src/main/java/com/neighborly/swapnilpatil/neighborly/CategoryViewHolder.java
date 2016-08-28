@@ -18,8 +18,8 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder{
     public CategoryViewHolder(View v) {
         super(v);
         vName =  (TextView) v.findViewById(R.id.txtName);
-        vSurname = (TextView)  v.findViewById(R.id.txtSurname);
-        vEmail = (TextView)  v.findViewById(R.id.txtEmail);
-        vTitle = (TextView) v.findViewById(R.id.title);
+        //vSurname = (TextView)  v.findViewById(R.id.txtSurname);
+        //vEmail = (TextView)  v.findViewById(R.id.txtEmail);
+        //vTitle = (TextView) v.findViewById(R.id.title);
     }
 }
