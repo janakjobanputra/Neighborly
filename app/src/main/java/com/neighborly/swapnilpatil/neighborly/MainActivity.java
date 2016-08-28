@@ -7,18 +7,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.maps.SupportMapFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends Activity {
 
+    private List<String> categoryNames = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_my);
-
         setContentView(R.layout.activity_cards);
+        //addingLists();
         RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -27,6 +30,7 @@ public class MainActivity extends Activity {
 
         CategoryAdapter ca = new CategoryAdapter(createList(30));
         recList.setAdapter(ca);
+
     }
 
 
@@ -49,17 +53,18 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
     private List<Categories> createList(int size) {
-
+        categoryNames.add("Plumbing");
+        categoryNames.add("Car");
+        categoryNames.add("Medical");
+        categoryNames.add("Safety");
+        categoryNames.add("Electronics");
+        categoryNames.add("Food/Groceries");
+        categoryNames.add("Advice");
         List<Categories> result = new ArrayList<Categories>();
-        for (int i=1; i <= size; i++) {
+        for (int i=0; i < categoryNames.size(); i++) {
             Categories ci = new Categories();
-            ci.name = Categories.NAME_PREFIX + i;
-            //ci.surname = Categories.SURNAME_PREFIX + i;
-            //ci.email = Categories.EMAIL_PREFIX + i + "@test.com";
-
+            ci.name = categoryNames.get(i);
             result.add(ci);
 
         }
